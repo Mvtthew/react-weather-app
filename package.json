@@ -1,6 +1,8 @@
 {
   "name": "weather-app",
-  "version": "0.1.0",
+  "author": "Mateusz Ozog",
+  "license": "MIT",
+  "version": "4.2.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -10,9 +12,13 @@
     "@types/node": "^12.20.28",
     "@types/react": "^17.0.27",
     "@types/react-dom": "^17.0.9",
+    "bootstrap": "^5.1.2",
+    "dart-sass": "^1.25.0",
+    "dotenv": "^10.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "sass": "^1.42.1",
     "typescript": "^4.4.3",
     "web-vitals": "^1.1.2"
   },
