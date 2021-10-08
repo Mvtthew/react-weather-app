@@ -14,7 +14,11 @@ import './scss/styles.scss';
 * */
 dotenv.config();
 
-export const LocalizationContext = createContext<LocalizationType>(Locales['en']);
+/* Localization setup
+* Default locale key loaded from /.env file via key [DEFAULT_LOCALE]
+* */
+const defaultLocaleKey = process.env.DEFAULT_LOCALE as keyof typeof Locales;
+export const LocalizationContext = createContext<LocalizationType>(Locales[defaultLocaleKey]);
 
 ReactDOM.render(
     <React.StrictMode>
