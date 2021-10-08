@@ -1,3 +1,5 @@
 export type LocalizationType = {
-    appName: string;
+    appTitle: string;
+    appTitlePre: string;
+    by: string;
 }

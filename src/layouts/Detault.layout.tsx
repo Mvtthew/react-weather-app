@@ -1,18 +1,19 @@
-import React, {useContext} from "react";
+import React from "react";
 import {PageTitle} from "../components/ui/PageTitle";
 import {PageCopyright} from "../components/ui/PageCopyright";
 import {author} from "../../package.json";
-import {LocalizationType} from "../types/LocalizationType";
-import {LocalizationContext} from "../index";
+import {useLocales} from "../hooks/useLocales";
 
 export const DefaultLayout: React.FC<{}> = ({children}): JSX.Element => {
 
-    const locales = useContext<LocalizationType>(LocalizationContext);
+    const locales = useLocales();
+
+    const subtitle = `${locales.by} ${author}`;
 
     return <>
-        <PageTitle info='Not another'
-                   title={locales.appName}
-                   subTitle={"by Mateusz Ozog"}/>
+        <PageTitle info={locales.appTitlePre}
+                   title={locales.appTitle}
+                   subTitle={subtitle}/>
         <PageCopyright author={author}/>
         <div className='container min-vh-100 d-flex align-items-center'>
             <div className='default-layout-container'>
