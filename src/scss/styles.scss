@@ -1,4 +1,4 @@
-// Custom
+// Variables
 @import "./custom/variables";
 
 // Bootstrap 5
@@ -7,5 +7,17 @@
 // Fonts
 @import "./custom/fonts";
 
+// Custom
+@import "./custom/rounded";
+
 // Layouts
 @import './layouts/default.layout';
+
+// UI
+@import "./ui/search.input";
+@import "./ui/icon.button";
+@import "./ui/modal";
+@import "./ui/cursor";
+
+// Plugins
+@import "~boxicons";

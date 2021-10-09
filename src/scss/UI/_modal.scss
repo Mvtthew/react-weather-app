@@ -1,0 +1,58 @@
+@keyframes modal-backdrop-hide {
+    0% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        z-index: -1;
+    }
+}
+
+@keyframes modal-backdrop-show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal-backdrop {
+    backdrop-filter: blur(20px);
+    transition: 0.4s all;
+
+    &.hide {
+        animation: modal-backdrop-hide 0.4s;
+        animation-fill-mode: forwards;
+        background-color: rgba(#000, 0);
+    }
+
+    &.show {
+        animation: modal-backdrop-show 0.4s;
+        animation-fill-mode: forwards;
+        background-color: rgba(#000, 0.1);
+    }
+}
+
+.modal, .modal-body {
+    transition: 0.3s opacity;
+
+    .modal-body {
+        transition: 0.35s transform, opacity;
+    }
+
+    &.hide {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        transform: translateY(5%);
+        opacity: 0;
+    }
+
+    &.show {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}

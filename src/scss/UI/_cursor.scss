@@ -1,0 +1,9 @@
+$cursorStates: pointer, default, zoom-out, zoom-in;
+
+@each $cursorState in $cursorStates {
+    .cursor {
+        &-#{$cursorState} {
+            cursor: $cursorState;
+        }
+    }
+}
