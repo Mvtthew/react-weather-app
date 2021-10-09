@@ -32,6 +32,7 @@ export const App: React.FC = (): JSX.Element => {
             dispatch(setHourlyWeatherData(resHourly.data));
         } catch {
             dispatch(setCurrentWeatherData(null));
+            dispatch(setHourlyWeatherData(null));
         } finally {
             dispatch(setLoading(false));
         }
