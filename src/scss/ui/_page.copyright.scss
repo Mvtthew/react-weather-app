@@ -1,0 +1,7 @@
+.page-copyright {
+    @media (min-width: $breakpoint-xxl) {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+    }
+}

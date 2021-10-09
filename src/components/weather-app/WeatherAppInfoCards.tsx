@@ -7,12 +7,13 @@ interface Props {
 
 export const WeatherAppInfoCards: React.FC<Props> = ({cardsData}): JSX.Element => {
     return <div className="py-2 px-4">
-        <div className="d-flex justify-content-between">
+        <div className="d-flex flex-wrap justify-content-between">
             {cardsData.map((
                 cardData,
                 index) =>
                 <div key={`info-card_${index}`}
-                     className="text-start w-100">
+                     className="text-start"
+                     style={{minWidth: '110px'}}>
                     <p className="mb-0">{cardData.title}</p>
                     <p className="mb-0 fw-bold">
                         {cardData.value}

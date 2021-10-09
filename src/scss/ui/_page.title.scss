@@ -1,0 +1,10 @@
+.page-title {
+    text-align: center;
+
+    @media (min-width: $breakpoint-xxl) {
+        text-align: left;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+}

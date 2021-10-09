@@ -12,11 +12,11 @@ export const DefaultLayout: React.FC<{}> = ({children}): JSX.Element => {
         <PageTitle info={locales.appTitlePre}
                    title={locales.appTitle}
                    subTitle={locales.appSubTitle}/>
-        <PageCopyright author={author}/>
         <div className="default-layout">
             <div className="default-layout-container p-4 shadow-lg">
                 {children}
             </div>
         </div>
+        <PageCopyright author={author}/>
     </>;
 };

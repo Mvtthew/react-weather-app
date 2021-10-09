@@ -14,6 +14,8 @@
 @import './layouts/default.layout';
 
 // UI
+@import "./ui/page.title";
+@import "./ui/page.copyright";
 @import "./ui/search.input";
 @import "./ui/icon.button";
 @import "./ui/modal";
