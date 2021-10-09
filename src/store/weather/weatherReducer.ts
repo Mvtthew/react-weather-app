@@ -1,15 +1,18 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {CurrentWeatherForCityResponseType} from '../../api/openWeather/types/CurrentWeatherForCityResponseType';
 import {openWeatherDefaultCity} from '../../config/Config';
+import {HourlyWeatherForCityResponseType} from '../../api/openWeather/types/HourlyWeatherForCityResponseType';
 
 type InitialStateType = {
-    weatherData: CurrentWeatherForCityResponseType | null,
+    currentWeatherData: CurrentWeatherForCityResponseType | null,
+    hourlyWeatherData: HourlyWeatherForCityResponseType | null,
     cityName: string;
     loading: boolean;
 }
 
 const initialState: InitialStateType = {
-    weatherData: null,
+    currentWeatherData: null,
+    hourlyWeatherData: null,
     cityName: openWeatherDefaultCity,
     loading: false,
 };
@@ -18,9 +21,13 @@ export const weatherReducer = createSlice({
     name: 'weather',
     initialState,
     reducers: {
-        setWeatherData(state,
+        setCurrentWeatherData(state,
             action: PayloadAction<CurrentWeatherForCityResponseType | null>) {
-            state.weatherData = action.payload;
+            state.currentWeatherData = action.payload;
+        },
+        setHourlyWeatherData(state,
+            action: PayloadAction<HourlyWeatherForCityResponseType | null>) {
+            state.hourlyWeatherData = action.payload;
         },
         setCityName(state,
             action: PayloadAction<string>) {
@@ -33,5 +40,5 @@ export const weatherReducer = createSlice({
     },
 });
 
-export const {setWeatherData, setCityName, setLoading} = weatherReducer.actions;
+export const {setCurrentWeatherData, setHourlyWeatherData, setCityName, setLoading} = weatherReducer.actions;
 export default weatherReducer.reducer;

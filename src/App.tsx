@@ -6,7 +6,7 @@ import {Locales} from './localization/Locales';
 import {defaultLocaleKey} from './config/Config';
 import {useOpenWeatherApi} from './hooks/useOpenWeatherApi';
 import {useAppDispatch} from './hooks/useAppDispatch';
-import {setLoading, setWeatherData} from './store/weather/weatherReducer';
+import {setCurrentWeatherData, setHourlyWeatherData, setLoading} from './store/weather/weatherReducer';
 import {useAppSelector} from './hooks/useAppSelector';
 
 export const LocalizationContext = React.createContext<LocalizationContextType>({
@@ -27,9 +27,11 @@ export const App: React.FC = (): JSX.Element => {
         dispatch(setLoading(true));
         try {
             const resCurrent = await openWeatherApi.getCurrentWeatherForCityName(cityName);
-            dispatch(setWeatherData(resCurrent.data));
+            dispatch(setCurrentWeatherData(resCurrent.data));
+            const resHourly = await openWeatherApi.getHourlyWeatherForCityName(cityName);
+            dispatch(setHourlyWeatherData(resHourly.data));
         } catch {
-            dispatch(setWeatherData(null));
+            dispatch(setCurrentWeatherData(null));
         } finally {
             dispatch(setLoading(false));
         }

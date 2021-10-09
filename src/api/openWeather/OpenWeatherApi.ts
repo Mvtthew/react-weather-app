@@ -18,7 +18,7 @@ export class OpenWeatherApi {
     }
 
     public async getHourlyWeatherForCityName(cityName: string): Promise<AxiosResponse<HourlyWeatherForCityResponseType>> {
-        const url = `${this.apiUrl}hourly?q=${cityName}&appid=${this.apiKey}&units=metric&lang=${defaultLocaleKey}`;
+        const url = `${this.apiUrl}forecast?q=${cityName}&appid=${this.apiKey}&units=metric&lang=${defaultLocaleKey}`;
         return await axios.get<HourlyWeatherForCityResponseType>(url);
     }
 
