@@ -1,0 +1,8 @@
+.hourly-weather-card {
+    border-right: 2px solid $dark;
+    padding: 0 1rem;
+
+    &:last-child {
+        border-right: 0;
+    }
+}

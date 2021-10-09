@@ -6,7 +6,7 @@ import {useLocales} from '../../hooks/useLocales';
 import {WeatherAppInfoCards} from './WeatherAppInfoCards';
 import {WeatherCardDataType} from '../../types/WeatherCardDataType';
 
-export const WeatherAppWeatherData: React.FC = (): JSX.Element => {
+export const WeatherAppCurrentWeatherData: React.FC = (): JSX.Element => {
 
     const {locales} = useLocales();
 
@@ -24,7 +24,7 @@ export const WeatherAppWeatherData: React.FC = (): JSX.Element => {
     };
 
     if (!currentWeatherData && !loading) return <>
-        <p className="text-center py-5">{locales.noWeatherDataForCity}</p>
+        <p className="text-center py-5">{locales.noCurrentWeatherDataForCity}</p>
     </>;
     else if (loading) return <div className="w-100 py-5 text-center">
         <PageSpinner/>

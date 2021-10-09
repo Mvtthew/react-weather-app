@@ -32,7 +32,7 @@ export type HourlyWeatherForCityResponseType = {
         sys: {
             pod: string;
         }
-    },
+    }[],
     city: {
         id: number;
         name: string;

@@ -4,7 +4,9 @@ import {WeatherAppCitySearch} from '../components/weather-app/WeatherAppCitySear
 import {WeatherAppCity} from '../components/weather-app/WeatherAppCity';
 import {useAppSelector} from '../hooks/useAppSelector';
 import moment from 'moment';
-import {WeatherAppWeatherData} from '../components/weather-app/WeatherAppWeatherData';
+import {WeatherAppCurrentWeatherData} from '../components/weather-app/WeatherAppCurrentWeatherData';
+import {WeatherAppHourlyWeatherData} from '../components/weather-app/WeatherAppHourlyWeatherData';
+import {PageSeparator} from '../components/ui/PageSeparator';
 
 export const HomeView: React.FC<{}> = (): JSX.Element => {
 
@@ -29,7 +31,11 @@ export const HomeView: React.FC<{}> = (): JSX.Element => {
                                 localizationDescription={localizationDate()}/>
                 <WeatherAppCitySearch/>
             </div>
-            <WeatherAppWeatherData/>
+            <WeatherAppCurrentWeatherData/>
+            <div className="p-4">
+                <PageSeparator/>
+            </div>
+            <WeatherAppHourlyWeatherData/>
         </DefaultLayout>
     </>;
 };
