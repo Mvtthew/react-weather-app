@@ -1,5 +1,5 @@
-# Getting Started with Create React App
+# Another Weather app
 
-Simple and clean web weather application (React w/TS)
+☀️ Simple and clean web weather application (React w/TS)
 
-# [WIP]
+![image](https://user-images.githubusercontent.com/39082174/136675078-5cfec5a5-6d44-448a-ba30-d852b09c6a6b.png)
