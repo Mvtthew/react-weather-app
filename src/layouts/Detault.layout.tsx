@@ -6,7 +6,7 @@ import {useLocales} from '../hooks/useLocales';
 
 export const DefaultLayout: React.FC<{}> = ({children}): JSX.Element => {
 
-    const locales = useLocales();
+    const {locales} = useLocales();
 
     return <>
         <PageTitle info={locales.appTitlePre}

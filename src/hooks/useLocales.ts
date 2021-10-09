@@ -1,5 +1,5 @@
-import {useContext} from "react";
-import {LocalizationType} from "../types/LocalizationType";
-import {LocalizationContext} from "../index";
+import {useContext} from 'react';
+import {LocalizationContext} from '../App';
+import {LocalizationContextType} from '../types/LocalizationContextType';
 
-export const useLocales = (): LocalizationType => useContext<LocalizationType>(LocalizationContext);
+export const useLocales = (): LocalizationContextType => useContext<LocalizationContextType>(LocalizationContext);

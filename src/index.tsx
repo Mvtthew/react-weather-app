@@ -1,24 +1,18 @@
-import React, {createContext} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import {LocalizationType} from './types/LocalizationType';
-import {Locales} from './localization/Locales';
-import {HomeView} from './views/Home.view';
+import {App} from './App';
+import {store} from './store/store';
+import {Provider} from 'react-redux';
 
 /* Global styles
 * */
 import './scss/styles.scss';
-import {defaultLocaleKey} from './config/Config';
-
-/* Localization setup
-* Default locale key loaded from /.env file via key [DEFAULT_LOCALE]
-* */
-export const LocalizationContext = createContext<LocalizationType>(Locales[defaultLocaleKey]);
 
 ReactDOM.render(
     <React.StrictMode>
-        <LocalizationContext.Provider value={Locales['en']}>
-            <HomeView/>
-        </LocalizationContext.Provider>
+        <Provider store={store}>
+            <App/>
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root'),
 );
