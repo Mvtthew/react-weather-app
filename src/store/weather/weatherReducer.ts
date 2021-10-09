@@ -1,9 +1,9 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {WeatherForCityResponseType} from '../../api/openWeather/types/WeatherForCityResponseType';
+import {CurrentWeatherForCityResponseType} from '../../api/openWeather/types/CurrentWeatherForCityResponseType';
 import {openWeatherDefaultCity} from '../../config/Config';
 
 type InitialStateType = {
-    weatherData: WeatherForCityResponseType | null,
+    weatherData: CurrentWeatherForCityResponseType | null,
     cityName: string;
     loading: boolean;
 }
@@ -19,7 +19,7 @@ export const weatherReducer = createSlice({
     initialState,
     reducers: {
         setWeatherData(state,
-            action: PayloadAction<WeatherForCityResponseType | null>) {
+            action: PayloadAction<CurrentWeatherForCityResponseType | null>) {
             state.weatherData = action.payload;
         },
         setCityName(state,

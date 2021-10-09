@@ -1,4 +1,4 @@
-export type WeatherForCityResponseType = {
+export type CurrentWeatherForCityResponseType = {
     coord: {
         lon: number;
         lat: number;
