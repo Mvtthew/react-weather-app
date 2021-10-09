@@ -15,6 +15,7 @@ export const WeatherAppCitySearch: React.FC = (): JSX.Element => {
     const updateWeatherCity = () => {
         const value = searchInputRef.current ? searchInputRef.current.value : '';
         dispatch(setCityName(value));
+        setShowSearchModal(false);
     };
 
     return <>
@@ -23,9 +24,14 @@ export const WeatherAppCitySearch: React.FC = (): JSX.Element => {
             <i className="bx bx-search"/>
         </button>
 
-        <PageModal show={showSearchModal} setShow={setShowSearchModal}>
+        <PageModal show={showSearchModal}
+                   setShow={setShowSearchModal}>
             <div className="text-center">
-                <input ref={searchInputRef} className="search-input h6 text-center"
+                <input ref={searchInputRef}
+                       onKeyDown={e => {
+                           if (e.key === 'Enter') updateWeatherCity();
+                       }}
+                       className="search-input h6 text-center"
                        placeholder={locales.enterCityName}/>
                 <button onClick={updateWeatherCity}
                         className="btn btn-lg btn-primary rounded-pill text-white d-block m-auto mt-4">

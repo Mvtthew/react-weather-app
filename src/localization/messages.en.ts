@@ -6,4 +6,5 @@ export const MessagesEn: LocalizationType = {
     appSubTitle: 'React w/TypeScript',
     enterCityName: 'Enter city name',
     search: 'Search',
+    noWeatherDataForCity: 'Cannot load weather data for this city.',
 };

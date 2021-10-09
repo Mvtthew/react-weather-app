@@ -4,4 +4,5 @@ export type LocalizationType = {
     appSubTitle: string;
     enterCityName: string;
     search: string;
+    noWeatherDataForCity: string;
 }

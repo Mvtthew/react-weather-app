@@ -3,26 +3,33 @@ import {DefaultLayout} from '../layouts/Detault.layout';
 import {WeatherAppCitySearch} from '../components/weather-app/WeatherAppCitySearch';
 import {WeatherAppCity} from '../components/weather-app/WeatherAppCity';
 import {useAppSelector} from '../hooks/useAppSelector';
-import {useOpenWeatherApi} from '../hooks/useOpenWeatherApi';
+import moment from 'moment';
+import {WeatherAppWeatherData} from '../components/weather-app/WeatherAppWeatherData';
 
 export const HomeView: React.FC<{}> = (): JSX.Element => {
 
-    const openWeatherApi = useOpenWeatherApi();
-    const {weatherData, cityName} = useAppSelector(state => state.weather);
+    const {weatherData, cityName, loading} = useAppSelector(state => state.weather);
 
     const localizationDate = () => {
-
-        return '15:00';
+        let dateString = '';
+        if (weatherData) {
+            dateString += moment(weatherData.dt * 1000 + weatherData.timezone * 1000)
+                .utc(false)
+                .format('HH:mm');
+            const hoursAfterUtc = moment.duration(weatherData.timezone * 1000).hours();
+            dateString += ` (GMT${weatherData.timezone > 0 ? '+' : ''}${hoursAfterUtc}:00)`;
+        }
+        return dateString;
     };
 
     return <>
         <DefaultLayout>
             <div className="d-flex justify-content-between p-4">
-                <WeatherAppCity cityName={cityName} localizationDescription={localizationDate()}/>
+                <WeatherAppCity cityName={weatherData ? weatherData.name : cityName}
+                                localizationDescription={localizationDate()}/>
                 <WeatherAppCitySearch/>
             </div>
-            {weatherData && <img alt="Weather app - weather condition icon"
-			                     src={openWeatherApi.generateIconImageUrl(weatherData.weather[0].icon)}/>}
+            <WeatherAppWeatherData/>
         </DefaultLayout>
     </>;
 };
