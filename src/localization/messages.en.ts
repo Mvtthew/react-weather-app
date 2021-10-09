@@ -4,6 +4,6 @@ export const MessagesEn: LocalizationType = {
     appTitle: 'Weather app',
     appTitlePre: 'Not another',
     appSubTitle: 'React w/TypeScript',
-    cityName: 'City name',
+    enterCityName: 'Enter city name',
     search: 'Search',
 };

@@ -16,7 +16,7 @@ export const WeatherAppCitySearch: React.FC = (): JSX.Element => {
 
         <PageModal show={showSearchModal} setShow={setShowSearchModal}>
             <div className="text-center">
-                <input className="search-input h6 text-center" placeholder={locales.cityName}/>
+                <input className="search-input h6 text-center" placeholder={locales.enterCityName}/>
                 <button className="btn btn-lg btn-primary rounded-pill text-white d-block m-auto mt-4">
                     {locales.search}
                     <i className="bx bx-search ms-2"/>

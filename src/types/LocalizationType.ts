@@ -2,6 +2,6 @@ export type LocalizationType = {
     appTitle: string;
     appTitlePre: string;
     appSubTitle: string;
-    cityName: string;
+    enterCityName: string;
     search: string;
 }
