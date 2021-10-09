@@ -5,4 +5,9 @@ export type LocalizationType = {
     enterCityName: string;
     search: string;
     noWeatherDataForCity: string;
+    wind: string;
+    visibility: string;
+    humidity: string;
+    feelsLike: string;
+    kmph: string;
 }

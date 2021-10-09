@@ -11,7 +11,12 @@ export class OpenWeatherApi {
         this.apiKey = openWeatherApiKey;
     }
 
-    public async getWeatherForCityName(cityName: string): Promise<AxiosResponse<WeatherForCityResponseType>> {
+    public async getCurrentWeatherForCityName(cityName: string): Promise<AxiosResponse<WeatherForCityResponseType>> {
+        const url = `${this.apiUrl}weather?q=${cityName}&appid=${this.apiKey}&units=metric&lang=${defaultLocaleKey}`;
+        return await axios.get<WeatherForCityResponseType>(url);
+    }
+
+    public async getHourlyWeatherForCityName(cityName: string): Promise<AxiosResponse<WeatherForCityResponseType>> {
         const url = `${this.apiUrl}weather?q=${cityName}&appid=${this.apiKey}&units=metric&lang=${defaultLocaleKey}`;
         return await axios.get<WeatherForCityResponseType>(url);
     }

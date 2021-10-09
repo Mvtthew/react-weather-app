@@ -26,8 +26,8 @@ export const App: React.FC = (): JSX.Element => {
     const updateWeatherDataForCityName = async () => {
         dispatch(setLoading(true));
         try {
-            const res = await openWeatherApi.getWeatherForCityName(cityName);
-            dispatch(setWeatherData(res.data));
+            const resCurrent = await openWeatherApi.getCurrentWeatherForCityName(cityName);
+            dispatch(setWeatherData(resCurrent.data));
         } catch {
             dispatch(setWeatherData(null));
         } finally {
