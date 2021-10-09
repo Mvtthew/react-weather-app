@@ -4,9 +4,18 @@
     background-color: transparent;
     border-radius: 0;
     font-weight: 600;
-    width: 50%;
-    font-size: 3rem;
+    width: 65%;
+    font-size: 2rem;
     padding: 1rem 0;
+
+    @media (min-width: $breakpoint-xxl) {
+        font-size: 3rem;
+        width: 50%;
+    }
+    @media (max-width: $breakpoint-md) {
+        font-size: 1.5rem;
+        width: 80%;
+    }
 
     &:active, &:focus {
         border: 0;
